@@ -1,4 +1,16 @@
+
+
+
 <section class="section">
+  <div *ngIf="true"  class="c-search">
+    <input [hidden]="show" placeholder="name" type="text" [(ngModel)]="newName">
+    <input [hidden]="show" placeholder="calories" type="text" [(ngModel)]="newCalories"/>
+    <input [hidden]="show" placeholder="image" type="text" [(ngModel)]="newImage"/>
+    <input [hidden]="show" placeholder="quantity" type="text" [(ngModel)]="newQuantity"/>
+    <button (click)="addItem()" (click)="show">
+      add
+    </button>
+  </div>
   <label for="search">Search dish</label>
   <input type="text" name="" value="" placeholder="Search Food" [(ngModel)]="pattern">
   <div class="container" *ngFor="let foods of foodies |  filter:'name':pattern">

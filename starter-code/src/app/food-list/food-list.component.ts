@@ -7,11 +7,17 @@ import foods from '../foods';
   styleUrls: ['./food-list.component.css']
 })
 export class FoodListComponent implements OnInit {
-  foodies: Object[]; 
+  foodies: Object[];
+  newFood: Object = {};
+  show: boolean = false;
   constructor() { }
 
   ngOnInit() {
     this.foodies = foods;
   }
 
+  addItem(){
+    foods.push(this.newFood);
+    this.show = !this.show;
+  }
 }
