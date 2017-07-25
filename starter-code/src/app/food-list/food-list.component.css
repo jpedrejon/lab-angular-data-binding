@@ -1,0 +1,20 @@
+.section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.container {
+  margin-bottom: 40px;
+  border: solid 2px black;
+  width: 600px;
+  margin: auto;
+  margin-bottom: 40px;
+
+}
+
+.description {
+  text-align: center;
+  float: right;
+  margin-right: 60px ;
+
+}
