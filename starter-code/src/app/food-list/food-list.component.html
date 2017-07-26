@@ -4,13 +4,13 @@
 <section class="section">
 
   <div  *ngIf="true"  class="c-search">
-    <button [hidden]="show" (click)="addItem()" >
+    <button [hidden]="show" (click)="addItem(newFood)" >
       add food
     </button>
-    <input [hidden]="show" placeholder="name" type="text" [(ngModel)]="newName">
-    <input [hidden]="show" placeholder="calories" type="text" [(ngModel)]="newCalories"/>
-    <input [hidden]="show" placeholder="image" type="text" [(ngModel)]="newImage"/>
-    <input [hidden]="show" placeholder="quantity" type="text" [(ngModel)]="newQuantity"/>
+    <input [hidden]="show" placeholder="name" type="text" [(ngModel)]="newFood.name">
+    <input [hidden]="show" placeholder="calories" type="text" [(ngModel)]="newFood.calories"/>
+    <input [hidden]="show" placeholder="image" type="text" [(ngModel)]="newFood.image"/>
+    <input [hidden]="show" placeholder="quantity" type="text" [(ngModel)]="newFood.quantity"/>
 
   </div>
   <button (click)="addItemForm()" >
@@ -22,9 +22,18 @@
     <div class="description">
       <h2> {{foods.name}} </h2>
       <h3> Calories: {{ foods.calories}} </h3>
-      <h3> Quantity: {{foods.quantity}} </h3>
-      <button type="button" name="addToList">Add to list</button>
+      <button type="button" (click)="addList(foods)" >Add to list</button>
     </div>
-    <img src="{{foods.image}}" width=300>
+    <img src="{{foods.image}}" width=400>
   </div>
 </section>
+
+<div class="list">
+  <ul *ngFor="let foods of todaysFood">
+    <li> {{foods.name}} </li>
+    <li> Calories: {{ foods.calories}} </li>
+    <li> Quantity: {{foods.quantity}} </li>
+  </ul>
+    <p> Total Calories: {{showList}} </p>
+
+</div>

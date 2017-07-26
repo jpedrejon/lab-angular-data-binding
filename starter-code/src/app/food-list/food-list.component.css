@@ -1,6 +1,7 @@
 .section {
   text-align: center;
   margin-bottom: 40px;
+  float: left;
 }
 
 .container {
@@ -17,4 +18,9 @@
   float: right;
   margin-right: 60px ;
 
+}
+
+.list {
+
+  margin-top: 0;
 }
